@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monopoly Bank System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             --primary: #0a0f18;
@@ -470,7 +471,9 @@
             <div class="bank-setup">
                 <h2>Imposta PIN Banca</h2>
                 <input type="password" id="bank-pin-setup" placeholder="PIN Banca (4 cifre)" maxlength="4">
-                <button class="btn" onclick="setBankPin()">Conferma PIN Banca</button>
+                <button class="btn" onclick="setBankPin()">
+                    <i class="fa-solid fa-lock"></i> Conferma PIN Banca
+                </button>
             </div>
             
             <div class="registration-form" style="display: none;">
@@ -479,8 +482,12 @@
                 <input type="text" id="player-name" placeholder="Nome Giocatore">
                 <input type="password" id="player-pin" placeholder="PIN (4 cifre)" maxlength="4">
                 <div class="color-picker" id="color-picker"></div>
-                <button class="btn" onclick="registerPlayer()">Registra Giocatore</button>
-                <button class="btn" onclick="startGame()" id="start-game-btn" style="display: none;">Inizia Partita</button>
+                <button class="btn" onclick="registerPlayer()">
+                    <i class="fa-solid fa-user-plus"></i> Registra Giocatore
+                </button>
+                <button class="btn" onclick="startGame()" id="start-game-btn" style="display: none;">
+                    <i class="fa-solid fa-play"></i> Inizia Partita
+                </button>
             </div>
         </div>
 
@@ -489,7 +496,9 @@
         <div class="modal-overlay" id="modal-overlay"></div>
         
         <div class="modal" id="pin-modal">
-            <button class="modal-close" onclick="hidePinModal()">✕</button>
+            <button class="modal-close" onclick="hidePinModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
             <h2>Inserisci PIN</h2>
             <div class="pin-display" id="pin-display">****</div>
             <div class="keypad">
@@ -502,25 +511,39 @@
                 <button class="key" onclick="addPin('7')">7</button>
                 <button class="key" onclick="addPin('8')">8</button>
                 <button class="key" onclick="addPin('9')">9</button>
-                <button class="key red" onclick="clearPin()">C</button>
+                <button class="key red" onclick="clearPin()">
+                    <i class="fa-solid fa-delete-left"></i>
+                </button>
                 <button class="key" onclick="addPin('0')">0</button>
-                <button class="key green" onclick="confirmPin()">✓</button>
+                <button class="key green" onclick="confirmPin()">
+                    <i class="fa-solid fa-check"></i>
+                </button>
             </div>
         </div>
 
         <div class="modal" id="action-modal">
             <h2>Seleziona Operazione</h2>
-            <button class="action-button" onclick="showBalance()">Visualizza Saldo</button>
-            <button class="action-button" onclick="showTransferForm()">Trasferisci Denaro</button>
-            <button class="action-button" onclick="showPassGo()">Passa dal Via</button>
-            <button class="action-button" style="background: var(--danger)" onclick="closeActionModal()">Chiudi</button>
+            <button class="action-button" onclick="showBalance()">
+                <i class="fa-solid fa-money-bill"></i> Visualizza Saldo
+            </button>
+            <button class="action-button" onclick="showTransferForm()">
+                <i class="fa-solid fa-money-bill-transfer"></i> Trasferisci Denaro
+            </button>
+            <button class="action-button" onclick="showPassGo()">
+                <i class="fa-solid fa-flag-checkered"></i> Passa dal Via
+            </button>
+            <button class="action-button" style="background: var(--danger)" onclick="closeActionModal()">
+                <i class="fa-solid fa-xmark"></i> Chiudi
+            </button>
             
             <div class="transfer-form" id="transfer-form" style="display: none;">
                 <select class="iban-dropdown" id="transfer-iban">
                     <option value="">Seleziona destinatario</option>
                 </select>
                 <input type="number" id="transfer-amount" placeholder="Importo">
-                <button class="action-button" onclick="executeTransfer()">Conferma Trasferimento</button>
+                <button class="action-button" onclick="executeTransfer()">
+                    <i class="fa-solid fa-check"></i> Conferma Trasferimento
+                </button>
             </div>
         </div>
     </div>
